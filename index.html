@@ -1317,7 +1317,7 @@
             }
             doc.setTextColor(0, 0, 0);
             doc.setFont("Courier", "normal");
-            doc.setFontSize(16);
+            doc.setFontSize(14);
 
             doc.text(`Personality Report for ${currentUser.name}`, margin, y);
             y += lineHeight * 2;
@@ -1379,8 +1379,8 @@
                 doc.rect(margin / 2, margin / 2, pageWidth - margin, pageHeight - margin);
                 // Add tiled watermark on new page
                 doc.setTextColor(200, 200, 200);
-                doc.setFontSize(20);
-                doc.setFont("helvetica", "bold");
+                doc.setFontSize(14);
+                doc.setFont("Courier", "normal");
                 for (let x = 0; x < pageWidth; x += stepX) {
                     for (let yPos = 0; yPos < pageHeight; yPos += stepY) {
                         doc.text(watermarkText, x, yPos, { angle: 45, opacity: 0.05 });
@@ -1435,8 +1435,8 @@
                     doc.rect(margin / 2, margin / 2, pageWidth - margin, pageHeight - margin);
                     // Add tiled watermark on new page
                     doc.setTextColor(200, 200, 200);
-                    doc.setFontSize(20);
-                    doc.setFont("helvetica", "bold");
+                    doc.setFontSize(14);
+                    doc.setFont("Courier", "bold");
                     for (let x = 0; x < pageWidth; x += stepX) {
                         for (let yPos = 0; yPos < pageHeight; yPos += stepY) {
                             doc.text(watermarkText, x, yPos, { angle: 45, opacity: 0.05 });
