@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
  <head>
   <meta charset="utf-8"/>
@@ -5,35 +6,38 @@
   <title>
    Student Counseling System
   </title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js">
+  </script>
   <style>
    body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-        }
-        #reportContent {
-            max-height: 220px;
-            overflow-y: auto;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        /* Custom scrollbar for report */
-        #reportContent::-webkit-scrollbar {
-            width: 8px;
-        }
-        #reportContent::-webkit-scrollbar-track {
-            background: #e0e0e0;
-            border-radius: 4px;
-        }
-        #reportContent::-webkit-scrollbar-thumb {
-            background: #764ba2;
-            border-radius: 4px;
-        }
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+    #reportContent {
+      max-height: 220px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    #reportContent::-webkit-scrollbar {
+      width: 8px;
+    }
+    #reportContent::-webkit-scrollbar-track {
+      background: #e0e0e0;
+      border-radius: 4px;
+    }
+    #reportContent::-webkit-scrollbar-thumb {
+      background: #764ba2;
+      border-radius: 4px;
+    }
   </style>
  </head>
  <body class="min-h-screen flex items-center justify-center p-6">
@@ -115,17 +119,35 @@
     <div class="mb-6 text-gray-900 text-xl font-bold drop-shadow-sm" id="questionContainer">
     </div>
     <form class="space-y-6" id="answerForm">
-     <div class="flex flex-col sm:flex-row sm:justify-center sm:space-x-12 space-y-4 sm:space-y-0">
-      <label class="flex items-center space-x-3 cursor-pointer rounded-xl border-2 border-purple-300 p-4 hover:border-purple-600 transition focus-within:ring-4 focus-within:ring-purple-400">
-       <input aria-label="Yes" class="form-radio text-purple-600 w-6 h-6" name="response" type="radio" value="Yes"/>
+     <div class="flex flex-col space-y-4 max-w-full">
+      <label class="flex items-center space-x-3 cursor-pointer rounded-xl border-2 border-purple-300 p-4 hover:border-purple-600 transition focus-within:ring-4 focus-within:ring-purple-400 w-full max-w-full" style="min-height:48px;">
+       <input aria-label="Strongly Agree" class="form-radio text-purple-600 w-6 h-6" name="response" type="radio" value="Strongly Agree"/>
        <span class="text-lg font-semibold text-purple-700 select-none">
-        Yes
+        Strongly Agree
        </span>
       </label>
-      <label class="flex items-center space-x-3 cursor-pointer rounded-xl border-2 border-purple-300 p-4 hover:border-purple-600 transition focus-within:ring-4 focus-within:ring-purple-400">
-       <input aria-label="No" class="form-radio text-purple-600 w-6 h-6" name="response" type="radio" value="No"/>
+      <label class="flex items-center space-x-3 cursor-pointer rounded-xl border-2 border-purple-300 p-4 hover:border-purple-600 transition focus-within:ring-4 focus-within:ring-purple-400 w-full max-w-full" style="min-height:48px;">
+       <input aria-label="Agree" class="form-radio text-purple-600 w-6 h-6" name="response" type="radio" value="Agree"/>
        <span class="text-lg font-semibold text-purple-700 select-none">
-        No
+        Agree
+       </span>
+      </label>
+      <label class="flex items-center space-x-3 cursor-pointer rounded-xl border-2 border-purple-300 p-4 hover:border-purple-600 transition focus-within:ring-4 focus-within:ring-purple-400 w-full max-w-full" style="min-height:48px;">
+       <input aria-label="Neutral" class="form-radio text-purple-600 w-6 h-6" name="response" type="radio" value="Neutral"/>
+       <span class="text-lg font-semibold text-purple-700 select-none">
+        Neutral
+       </span>
+      </label>
+      <label class="flex items-center space-x-3 cursor-pointer rounded-xl border-2 border-purple-300 p-4 hover:border-purple-600 transition focus-within:ring-4 focus-within:ring-purple-400 w-full max-w-full" style="min-height:48px;">
+       <input aria-label="Disagree" class="form-radio text-purple-600 w-6 h-6" name="response" type="radio" value="Disagree"/>
+       <span class="text-lg font-semibold text-purple-700 select-none">
+        Disagree
+       </span>
+      </label>
+      <label class="flex items-center space-x-3 cursor-pointer rounded-xl border-2 border-purple-300 p-4 hover:border-purple-600 transition focus-within:ring-4 focus-within:ring-purple-400 w-full max-w-full" style="min-height:48px;">
+       <input aria-label="Strongly Disagree" class="form-radio text-purple-600 w-6 h-6" name="response" type="radio" value="Strongly Disagree"/>
+       <span class="text-lg font-semibold text-purple-700 select-none">
+        Strongly Disagree
        </span>
       </label>
      </div>
@@ -174,1297 +196,1228 @@
    <h1 class="text-4xl font-extrabold mb-10 text-purple-800 drop-shadow-lg relative z-10">
     Career Spark - Response Chart
    </h1>
-   <canvas aria-label="Bar chart showing yes and no responses by category" class="max-w-full" height="400" id="responseChart" role="img" width="800">
+   <canvas aria-label="Bar chart showing positive, neutral, and negative responses by category" class="max-w-full" height="400" id="responseChart" role="img" width="800">
    </canvas>
    <button aria-label="Back to Report" class="mt-10 bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-4 px-10 rounded-xl font-semibold text-lg shadow-lg hover:from-purple-700 hover:to-indigo-700 transition duration-300 focus:outline-none focus:ring-4 focus:ring-indigo-400 relative z-10" id="backToReport">
     <i class="fas fa-arrow-left mr-3">
     </i>
     Back to Report
    </button>
-   <img alt="Large faint watermark text 'Career Spark' in light gray behind content" aria-hidden="true" class="pointer-events-none absolute inset-0 m-auto w-96 h-96 opacity-20 select-none" height="600" src="https://storage.googleapis.com/a1aa/image/faa2c27f-7118-42e7-4f34-580104c78e27.jpg" width="600"/>
+   <img alt="Large faint watermark text 'Career Spark' in light gray behind content" aria-hidden="true" class="pointer-events-none absolute inset-0 m-auto w-96 h-96 opacity-20 select-none" height="600" src="https://storage.googleapis.com/a1aa/image/eea567b6-ec05-4b73-2a75-a0abbea0d3cf.jpg" width="600"/>
   </div>
   <script>
-   const signupButton = document.getElementById('signupButton');
-        const loginButton = document.getElementById('loginButton');
-        const quizStartButton = document.getElementById('quizStartButton');
-        const reportSection = document.getElementById('reportSection');
-        const reportContent = document.getElementById('reportContent');
-        const downloadReport = document.getElementById('downloadReport');
-        const appTitle = document.getElementById('appTitle');
-        const signupForm = document.getElementById('signupForm');
-        const loginForm = document.getElementById('loginForm');
-        const startButton = document.getElementById('startButton');
-        const questionSection = document.getElementById('questionSection');
-        const questionContainer = document.getElementById('questionContainer');
-        const prevButton = document.getElementById('prevButton');
-        const nextButton = document.getElementById('nextButton');
-        const answerForm = document.getElementById('answerForm');
-        const switchToLogin = document.getElementById('switchToLogin');
-        const switchToSignup = document.getElementById('switchToSignup');
-        const reasonInput = document.getElementById('reasonInput');
-        const signupMessage = document.getElementById('signupMessage');
-        const loginMessage = document.getElementById('loginMessage');
-        const questionCount = document.getElementById('questionCount');
-        const viewGraphButton = document.getElementById('viewGraphButton');
-        const graphPage = document.getElementById('graphPage');
-        const mainContainer = document.getElementById('mainContainer');
-        const backToReport = document.getElementById('backToReport');
+   const signupButton = document.getElementById("signupButton");
+    const loginButton = document.getElementById("loginButton");
+    const quizStartButton = document.getElementById("quizStartButton");
+    const reportSection = document.getElementById("reportSection");
+    const reportContent = document.getElementById("reportContent");
+    const downloadReport = document.getElementById("downloadReport");
+    const appTitle = document.getElementById("appTitle");
+    const signupForm = document.getElementById("signupForm");
+    const loginForm = document.getElementById("loginForm");
+    const startButton = document.getElementById("startButton");
+    const questionSection = document.getElementById("questionSection");
+    const questionContainer = document.getElementById("questionContainer");
+    const prevButton = document.getElementById("prevButton");
+    const nextButton = document.getElementById("nextButton");
+    const answerForm = document.getElementById("answerForm");
+    const switchToLogin = document.getElementById("switchToLogin");
+    const switchToSignup = document.getElementById("switchToSignup");
+    const reasonInput = document.getElementById("reasonInput");
+    const signupMessage = document.getElementById("signupMessage");
+    const loginMessage = document.getElementById("loginMessage");
+    const questionCount = document.getElementById("questionCount");
+    const viewGraphButton = document.getElementById("viewGraphButton");
+    const graphPage = document.getElementById("graphPage");
+    const mainContainer = document.getElementById("mainContainer");
+    const backToReport = document.getElementById("backToReport");
 
-        let users = JSON.parse(localStorage.getItem('users')) || [];
-        let currentUser  = null;
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let currentUser = null;
 
-        let selectedQuestions = [];
-        let currentQuestionIndex = 0;
-        let responses = [];
-        const categoryCounts = {};
+    let selectedQuestions = [];
+    let currentQuestionIndex = 0;
+    let responses = [];
+    const categoryCounts = {};
 
-        function selectRandomQuestions() {
-            const shuffled = [             { "Category": "Applied Arts", "Question": "Do you enjoy creating original artwork or crafts?" },
-            { "Category": "Applied Arts", "Question": "Do you often experiment with different design tools or media?" },
-            { "Category": "Applied Arts", "Question": "Are you interested in learning art techniques professionally?" },
-            { "Category": "Technology", "Question": "Do you enjoy solving technical problems?" },
-            { "Category": "Technology", "Question": "Are you interested in programming or software development?" },
-            {"Category": "Applied Arts","Question": "Would you like to pursue a career in visual design, sculpture, or illustration?"},
-            {"Category": "Applied Arts","Question": "Do you often feel inspired by visual surroundings?"},
- {
+    function selectRandomQuestions() {
+      const shuffled = [
+      { 
+    "Category": "Applied Arts", "Question": "Do you find deep satisfaction in the process of conceiving and creating original artwork or intricate crafts that reflect your personal vision or cultural influences?"
+},
+{ "Category": "Applied Arts", "Question": "Do you frequently engage in experimentation with a diverse array of design tools, multimedia platforms, or unconventional materials to push the boundaries of your creative expression?" },
+{ "Category": "Applied Arts", "Question": "Are you motivated to pursue formal training or advanced education in specialized art techniques to refine your skills and establish a professional presence in the field?" },
+{ "Category": "Technology", "Question": "Do you derive a sense of accomplishment from tackling complex technical challenges, devising innovative solutions, and optimizing systems or processes?" },
+{ "Category": "Technology", "Question": "Are you drawn to the intricacies of programming or software development, with a desire to build robust applications or contribute to cutting-edge technological advancements?" },
+{ "Category": "Applied Arts", "Question": "Are you considering a long-term career path in a creative discipline such as visual design, sculpture, or illustration, where you can translate abstract ideas into tangible works of art?" },
+{ "Category": "Applied Arts", "Question": "Do you often find yourself profoundly influenced or creatively stimulated by the aesthetics of your visual surroundings, such as architecture, nature, or cultural motifs?"},
+
+{
   "Category": "Applied Arts",
-  "Question": "Would you enjoy a job that involves crafting or painting daily?"
- },
- {
+  "Question": "Would you derive significant fulfillment from a career that requires you to engage in crafting or painting on a daily basis as a core component of your professional responsibilities?"
+},
+{
   "Category": "Applied Arts",
-  "Question": "Do you enjoy working with colors and visual textures?"
- },
- {
+  "Question": "Do you find yourself deeply engaged and inspired when experimenting with a wide spectrum of colors and visual textures to create impactful artistic compositions?"
+},
+{
   "Category": "Applied Arts",
-  "Question": "Are you good at drawing or visualizing objects in 3D?"
- },
- {
+  "Question": "Do you possess a strong aptitude for drawing intricate designs or visualizing objects in three-dimensional space with precision and creativity?"
+},
+{
   "Category": "Applied Arts",
-  "Question": "Would you like to work in galleries or creative studios?"
- },
- {
+  "Question": "Are you drawn to the idea of working in dynamic environments such as galleries or creative studios where you can collaborate with other artists and showcase your work?"
+},
+{
   "Category": "Commerce & Management",
-  "Question": "Are you comfortable handling business operations?"
- },
- {
+  "Question": "Do you feel confident in overseeing and executing the multifaceted aspects of business operations, ensuring seamless functionality and growth?"
+},
+{
   "Category": "Commerce & Management",
-  "Question": "Do you enjoy analyzing sales and market data?"
- },
- {
+  "Question": "Do you find satisfaction in delving into complex sales and market data to uncover trends, forecast outcomes, and inform strategic business decisions?"
+},
+{
   "Category": "Commerce & Management",
-  "Question": "Would you enjoy managing a team to meet business goals?"
- },
- {
+  "Question": "Would you find it rewarding to lead and inspire a team, aligning their efforts towards achieving ambitious business objectives and fostering a collaborative environment?"
+},
+{
   "Category": "Commerce & Management",
-  "Question": "Are you interested in organizational behavior and management strategy?"
- },
- {
+  "Question": "Are you intrigued by the nuances of organizational behavior and the development of sophisticated management strategies to enhance workplace dynamics?"
+},
+{
   "Category": "Commerce & Management",
-  "Question": "Do you find it fulfilling to improve business efficiency?"
- },
- {
+  "Question": "Do you experience a sense of accomplishment when identifying inefficiencies and implementing innovative solutions to optimize business processes?"
+},
+{
   "Category": "Commerce & Management",
-  "Question": "Do you like negotiating or closing business deals?"
- },
- {
+  "Question": "Are you energized by the challenge of negotiating complex agreements or finalizing high-stakes business deals with precision and tact?"
+},
+{
   "Category": "Commerce & Management",
-  "Question": "Do you enjoy making strategic decisions for growth?"
- },
- {
+  "Question": "Do you relish the opportunity to formulate and execute strategic decisions that drive sustainable growth and competitive advantage for an organization?"
+},
+{
   "Category": "Commerce & Management",
-  "Question": "Would you enjoy leading a business unit or company?"
- },
- {
+  "Question": "Would you aspire to take on a leadership role, guiding a business unit or an entire company towards long-term success and innovation?"
+},
+{
   "Category": "Commerce & Management",
-  "Question": "Do you stay updated on business trends and markets?"
- },
- {
+  "Question": "Do you actively seek out and analyze emerging business trends and market shifts to stay ahead in a rapidly evolving economic landscape?"
+},
+{
   "Category": "Commerce & Management",
-  "Question": "Are you interested in entrepreneurship or corporate leadership?"
- },
- {
+  "Question": "Are you passionate about exploring opportunities in entrepreneurship or ascending to roles of corporate leadership where you can shape organizational vision?"
+},
+{
   "Category": "Defense Services",
-  "Question": "Are you physically fit and enjoy discipline?"
- },
- {
+  "Question": "Do you maintain a high level of physical fitness and thrive in environments that demand strict adherence to discipline and order?"
+},
+{
   "Category": "Defense Services",
-  "Question": "Do you feel motivated by the idea of serving your country?"
- },
- {
+  "Question": "Does the prospect of dedicating yourself to the service of your nation ignite a profound sense of purpose and motivation within you?"
+},
+{
   "Category": "Defense Services",
-  "Question": "Can you handle high-pressure situations calmly?"
- },
- {
+  "Question": "Are you capable of maintaining composure and making sound decisions in high-pressure, critical situations that require quick thinking?"
+},
+{
   "Category": "Defense Services",
-  "Question": "Do you prefer structured, team-based environments?"
- },
- {
+  "Question": "Do you excel in highly structured, team-oriented settings where collaboration and adherence to protocol are paramount?"
+},
+{
   "Category": "Defense Services",
-  "Question": "Are you open to relocating or working in remote locations?"
- },
- {
+  "Question": "Are you adaptable and willing to relocate frequently or serve in remote, challenging locations as part of your professional commitment?"
+},
+{
   "Category": "Defense Services",
-  "Question": "Are you willing to undergo intense physical and mental training?"
- },
- {
+  "Question": "Are you prepared to endure rigorous physical and psychological training regimens to meet the demanding standards of a defense-oriented career?"
+},
+{
   "Category": "Defense Services",
-  "Question": "Do you value discipline and chain-of-command roles?"
- },
- {
+  "Question": "Do you deeply respect and value the principles of discipline and the hierarchical structure inherent in chain-of-command roles?"
+},
+{
   "Category": "Defense Services",
-  "Question": "Are you interested in a career in military or security services?"
- },
- {
+  "Question": "Are you inspired by the prospect of a long-term career in military or security services, contributing to national safety and stability?"
+},
+{
   "Category": "Defense Services",
-  "Question": "Would you enjoy survival training or tactical simulations?"
- },
- {
+  "Question": "Would you find fulfillment in participating in intensive survival training or engaging in strategic tactical simulations as part of your professional growth?"
+},
+{
   "Category": "Defense Services",
-  "Question": "Do you admire leadership and bravery in action?"
- },
- {
+  "Question": "Do you hold in high regard the qualities of leadership and bravery, especially when demonstrated in high-stakes, real-world scenarios?"
+},
+{
   "Category": "Design",
-  "Question": "Do you enjoy sketching or planning design ideas?"
- },
- {
+  "Question": "Do you find joy in the creative process of sketching or methodically planning innovative design concepts to bring unique ideas to life?"
+},
+{
   "Category": "Design",
-  "Question": "Are you fascinated by user interface (UI) or product design?"
- },
- {
+  "Question": "Are you captivated by the intricacies of user interface (UI) or product design, aiming to craft seamless and engaging experiences for users?"
+},
+{
   "Category": "Design",
-  "Question": "Do you pay attention to colors, typography, and layout?"
- },
- {
+  "Question": "Do you have a keen eye for detail, consistently focusing on the interplay of colors, typography, and layout to create visually harmonious designs?"
+},
+{
   "Category": "Design",
-  "Question": "Have you used any digital design tools (e.g., Figma, Photoshop)?"
- },
- {
+  "Question": "Have you explored or developed proficiency with advanced digital design tools such as Figma or Photoshop to realize your creative visions?"
+},
+{
   "Category": "Design",
-  "Question": "Do you want to design experiences that solve real-world problems?"
- },
- {
+  "Question": "Are you driven by the desire to create design experiences that address and solve tangible real-world challenges for diverse audiences?"
+},
+{
   "Category": "Design",
-  "Question": "Do you enjoy brainstorming creative solutions to visual problems?"
- },
- {
+  "Question": "Do you thrive on brainstorming inventive solutions to complex visual challenges, pushing the limits of conventional design thinking?"
+},
+{
   "Category": "Design",
-  "Question": "Do you notice design flaws in everyday products or spaces?"
- },
- {
+  "Question": "Are you highly attuned to identifying design inconsistencies or flaws in everyday products, environments, or user interfaces?"
+},
+{
   "Category": "Design",
-  "Question": "Would you like to design logos, ads, or websites?"
- },
- {
+  "Question": "Would you be excited to apply your skills to design impactful logos, advertisements, or fully functional websites for various clients?"
+},
+{
   "Category": "Design",
-  "Question": "Are you drawn to interior, fashion, or industrial design?"
- },
- {
+  "Question": "Are you particularly attracted to specialized fields like interior design, fashion design, or industrial design as potential career paths?"
+},
+{
   "Category": "Design",
-  "Question": "Do you follow design trends or famous designers?"
- },
- {
+  "Question": "Do you actively follow contemporary design trends or draw inspiration from the works of renowned designers to inform your own creations?"
+},
+{
   "Category": "Distribution & Logistics",
-  "Question": "Are you good at planning the movement of goods?"
- },
- {
+  "Question": "Do you excel at strategically planning and coordinating the efficient movement of goods across complex supply networks?"
+},
+{
   "Category": "Distribution & Logistics",
-  "Question": "Do you enjoy working with schedules and efficiency tracking?"
- },
- {
+  "Question": "Do you derive satisfaction from managing detailed schedules and meticulously tracking operational efficiency to ensure timely outcomes?"
+},
+{
   "Category": "Distribution & Logistics",
-  "Question": "Are you interested in supply chain or warehouse systems?"
- },
- {
+  "Question": "Are you intrigued by the inner workings of supply chain management or the optimization of warehouse systems for maximum productivity?"
+},
+{
   "Category": "Distribution & Logistics",
-  "Question": "Do you handle logistical or shipping challenges well?"
- },
- {
+  "Question": "Do you have a knack for navigating and resolving intricate logistical or shipping challenges with innovative problem-solving approaches?"
+},
+{
   "Category": "Distribution & Logistics",
-  "Question": "Do you enjoy roles with operational coordination?"
- },
- {
+  "Question": "Do you find fulfillment in roles that require high-level operational coordination across multiple teams and systems?"
+},
+{
   "Category": "Distribution & Logistics",
-  "Question": "Do you like streamlining systems and reducing delays?"
- },
- {
+  "Question": "Are you passionate about refining processes, streamlining operations, and implementing solutions to minimize delays and enhance performance?"
+},
+{
   "Category": "Distribution & Logistics",
-  "Question": "Are you good at keeping things organized and timely?"
- },
- {
+  "Question": "Do you possess a strong ability to maintain organization and ensure punctuality in fast-paced, deadline-driven environments?"
+},
+{
   "Category": "Distribution & Logistics",
-  "Question": "Would you enjoy managing warehouses or fleets?"
- },
- {
+  "Question": "Would you be enthusiastic about overseeing the management of warehouses or transportation fleets to optimize logistical operations?"
+},
+{
   "Category": "Distribution & Logistics",
-  "Question": "Are you skilled at analyzing shipping or routing data?"
- },
- {
+  "Question": "Are you adept at analyzing and interpreting shipping or routing data to identify inefficiencies and recommend actionable improvements?"
+},
+{
   "Category": "Distribution & Logistics",
-  "Question": "Do you enjoy optimizing delivery systems or schedules?"
- },
- {
+  "Question": "Do you take pride in designing and optimizing delivery systems or schedules to achieve cost-effectiveness and operational excellence?"
+},
+{
   "Category": "Education Training & Social Services",
-  "Question": "Do you like teaching or mentoring others?"
- },
- {
+  "Question": "Do you find profound satisfaction in teaching, guiding, or mentoring others to help them achieve their personal or academic potential?"
+},
+{
   "Category": "Education Training & Social Services",
-  "Question": "Are you patient and empathetic with people?"
- },
- {
+  "Question": "Are you naturally patient and empathetic, able to connect with individuals from diverse backgrounds to support their needs and growth?"
+},
+{
   "Category": "Education Training & Social Services",
-  "Question": "Are you interested in social work or development programs?"
- },
- {
+  "Question": "Are you drawn to meaningful careers in social work or community development programs aimed at improving societal well-being?"
+},
+{
   "Category": "Education Training & Social Services",
-  "Question": "Do you enjoy helping others grow or learn?"
- },
- {
+  "Question": "Do you feel a strong sense of purpose when facilitating the personal or intellectual growth of others through learning opportunities?"
+},
+{
   "Category": "Education Training & Social Services",
-  "Question": "Would you enjoy a role where you make a direct social impact?"
- },
- {
+  "Question": "Would you find it deeply rewarding to engage in a role where your efforts directly contribute to positive social change and impact?"
+},
+{
   "Category": "Education Training & Social Services",
-  "Question": "Do you feel fulfilled helping someone understand a concept?"
- },
- {
+  "Question": "Do you experience a sense of fulfillment when helping someone grasp a challenging concept or overcome a learning barrier?"
+},
+{
   "Category": "Education Training & Social Services",
-  "Question": "Would you enjoy working in community service or outreach?"
- },
- {
+  "Question": "Would you be inspired to dedicate yourself to community service or outreach initiatives that address pressing societal needs?"
+},
+{
   "Category": "Education Training & Social Services",
-  "Question": "Do you care about improving education access?"
- },
- {
+  "Question": "Are you passionate about advocating for and improving access to quality education for underserved or marginalized communities?"
+},
+{
   "Category": "Education Training & Social Services",
-  "Question": "Would you like to work with children, youth, or adults?"
- },
- {
+  "Question": "Would you enjoy working with diverse age groups, such as children, youth, or adults, to support their developmental or educational journeys?"
+},
+{
   "Category": "Education Training & Social Services",
-  "Question": "Do you enjoy creating lesson plans or training content?"
- },
- {
+  "Question": "Do you find joy in crafting detailed lesson plans or developing engaging training content tailored to different learning styles and needs?"
+},
+{
   "Category": "Engineering, Information & Technology",
-  "Question": "Do you enjoy solving engineering or technical problems?"
- },
- {
+  "Question": "Do you derive immense satisfaction from analyzing and solving intricate engineering or technical problems with innovative approaches?"
+},
+{
   "Category": "Engineering, Information & Technology",
-  "Question": "Are you interested in software or hardware development?"
- },
- {
+  "Question": "Are you captivated by the challenges and opportunities in software or hardware development, aiming to create cutting-edge solutions?"
+},
+{
   "Category": "Engineering, Information & Technology",
-  "Question": "Do you like learning how systems work?"
- },
- {
+  "Question": "Do you have a natural curiosity about deconstructing and understanding the mechanisms behind complex systems and technologies?"
+},
+{
   "Category": "Engineering, Information & Technology",
-  "Question": "Have you ever built a robot, coded an app, or repaired a gadget?"
- },
- {
+  "Question": "Have you ever taken on hands-on projects like building a robot, coding a unique application, or troubleshooting and repairing a gadget?"
+},
+{
   "Category": "Engineering, Information & Technology",
-  "Question": "Would you enjoy designing or optimizing technical systems?"
- },
- {
+  "Question": "Would you find it rewarding to design, refine, or optimize technical systems that address real-world needs and improve functionality?"
+},
+{
   "Category": "Engineering, Information & Technology",
-  "Question": "Do you enjoy figuring out how devices or software work?"
- },
- {
-  "Category": "Engineering, Information & Technology",
-  "Question": "Would you enjoy building machines, apps, or systems from scratch?"
- },
- {
-  "Category": "Engineering, Information & Technology",
-  "Question": "Do you keep up with new technologies or innovations?"
- },
- {
-  "Category": "Engineering, Information & Technology",
-  "Question": "Are you interested in AI, robotics, or automation?"
- },
- {
-  "Category": "Engineering, Information & Technology",
-  "Question": "Would you enjoy working as an engineer or IT specialist?"
- },
- {
-  "Category": "Entrepreneurship",
-  "Question": "Do you prefer creating your own projects over following others'?"
- },
- {
-  "Category": "Entrepreneurship",
-  "Question": "Are you comfortable taking business risks?"
- },
- {
-  "Category": "Entrepreneurship",
-  "Question": "Do you see problems as opportunities to create new solutions?"
- },
- {
-  "Category": "Entrepreneurship",
-  "Question": "Are you naturally curious and proactive?"
- },
- {
-  "Category": "Entrepreneurship",
-  "Question": "Would you enjoy building a team to bring your ideas to life?"
- },
- {
-  "Category": "Entrepreneurship",
-  "Question": "Do you often think of new business ideas?"
- },
- {
-  "Category": "Entrepreneurship",
-  "Question": "Do you enjoy managing all aspects of a project or business?"
- },
- {
-  "Category": "Entrepreneurship",
-  "Question": "Do you enjoy pitching ideas or products to others?"
- },
- {
-  "Category": "Entrepreneurship",
-  "Question": "Would you like to start your own company?"
- },
- {
-  "Category": "Entrepreneurship",
-  "Question": "Are you self-motivated and driven by innovation?"
- },
- {
-  "Category": "Finance & Accounting",
-  "Question": "Are you comfortable with numbers and calculations?"
- },
- {
-  "Category": "Finance & Accounting",
-  "Question": "Do you enjoy working with budgets and spreadsheets?"
- },
- {
-  "Category": "Finance & Accounting",
-  "Question": "Are you detail-oriented and precise with data?"
- },
- {
-  "Category": "Finance & Accounting",
-  "Question": "Are you interested in investments, stocks, or taxes?"
- },
- {
-  "Category": "Finance & Accounting",
-  "Question": "Would you enjoy managing a company's financial records?"
- },
- {
-  "Category": "Finance & Accounting",
-  "Question": "Do you find budgeting satisfying?"
- },
- {
-  "Category": "Finance & Accounting",
-  "Question": "Would you enjoy auditing or reviewing financial data?"
- },
- {
-  "Category": "Finance & Accounting",
-  "Question": "Are you good at reconciling accounts and spotting errors?"
- },
- {
-  "Category": "Finance & Accounting",
-  "Question": "Do you stay updated with financial news and trends?"
- },
- {
-  "Category": "Finance & Accounting",
-  "Question": "Would you like to work as a financial analyst or accountant?"
- },
- {
-  "Category": "Governance & Administration",
-  "Question": "Are you interested in how governments and organizations function?"
- },
- {
-  "Category": "Governance & Administration",
-  "Question": "Do you enjoy creating or enforcing policies?"
- },
- {
-  "Category": "Governance & Administration",
-  "Question": "Are you good at organizing and coordinating tasks?"
- },
- {
-  "Category": "Governance & Administration",
-  "Question": "Do you like public affairs, law, or civic responsibility?"
- },
- {
-  "Category": "Governance & Administration",
-  "Question": "Would you like to contribute to the public sector?"
- },
- {
-  "Category": "Governance & Administration",
-  "Question": "Do you enjoy organizing large events or teams?"
- },
- {
-  "Category": "Governance & Administration",
-  "Question": "Would you like to influence policy or public operations?"
- },
- {
-  "Category": "Governance & Administration",
-  "Question": "Are you interested in administrative leadership roles?"
- },
- {
-  "Category": "Governance & Administration",
-  "Question": "Do you like analyzing policies or governance systems?"
- },
- {
-  "Category": "Governance & Administration",
-  "Question": "Would you enjoy working in civil services or public administration?"
- },
- {
-  "Category": "Health, Medicine & Fitness",
-  "Question": "Are you interested in biology, health, or anatomy?"
- },
- {
-  "Category": "Health, Medicine & Fitness",
-  "Question": "Do you enjoy caring for others' health and well-being?"
- },
- {
-  "Category": "Health, Medicine & Fitness",
-  "Question": "Would you be comfortable in clinical or hospital environments?"
- },
- {
-  "Category": "Health, Medicine & Fitness",
-  "Question": "Are you passionate about fitness and physical wellness?"
- },
- {
-  "Category": "Health, Medicine & Fitness",
-  "Question": "Would you like to pursue a role in healthcare or medical sciences?"
- },
- {
-  "Category": "Health, Medicine & Fitness",
-  "Question": "Are you interested in becoming a doctor, nurse, or therapist?"
- },
- {
-  "Category": "Health, Medicine & Fitness",
-  "Question": "Do you enjoy helping people recover or stay healthy?"
- },
- {
-  "Category": "Health, Medicine & Fitness",
-  "Question": "Do you care about nutrition and lifestyle choices?"
- },
- {
-  "Category": "Health, Medicine & Fitness",
-  "Question": "Would you enjoy working in a hospital or clinic?"
- },
- {
-  "Category": "Health, Medicine & Fitness",
-  "Question": "Do you like staying updated with health science research?"
- },
- {
-  "Category": "Hospitality",
-  "Question": "Do you enjoy making people feel welcome and comfortable?"
- },
- {
-  "Category": "Hospitality",
-  "Question": "Are you good at handling guest services and requests?"
- },
- {
-  "Category": "Hospitality",
-  "Question": "Would you enjoy working in hotels, events, or travel?"
- },
- {
-  "Category": "Hospitality",
-  "Question": "Are you calm and patient in customer-facing roles?"
- },
- {
-  "Category": "Hospitality",
-  "Question": "Do you enjoy organizing dining, stays, or experiences?"
- },
- {
-  "Category": "Hospitality",
-  "Question": "Do you enjoy fast-paced service environments?"
- },
- {
-  "Category": "Hospitality",
-  "Question": "Are you skilled at managing customer expectations?"
- },
- {
-  "Category": "Hospitality",
-  "Question": "Would you like to run or manage a hospitality business?"
- },
- {
-  "Category": "Hospitality",
-  "Question": "Do you like creating memorable experiences for others?"
- },
- {
-  "Category": "Hospitality",
-  "Question": "Are you interested in event planning or tourism?"
- },
- {
-  "Category": "Actuarial Sciences",
-  "Question": "Are you very skilled at mathematics and statistics?"
- },
- {
-  "Category": "Actuarial Sciences",
-  "Question": "Do you enjoy working with data and predictive modeling?"
- },
- {
-  "Category": "Actuarial Sciences",
-  "Question": "Are you detail-oriented when working with numbers?"
- },
- {
-  "Category": "Actuarial Sciences",
-  "Question": "Would you enjoy assessing risk for insurance or finance?"
- },
- {
-  "Category": "Actuarial Sciences",
-  "Question": "Are you interested in probability and financial forecasting?"
- },
- {
-  "Category": "Actuarial Sciences",
-  "Question": "Do you enjoy analyzing complex data for patterns?"
- },
- {
-  "Category": "Actuarial Sciences",
-  "Question": "Would you like to help companies make data-driven decisions?"
- },
- {
-  "Category": "Actuarial Sciences",
-  "Question": "Are you interested in risk analysis and financial planning?"
- },
- {
-  "Category": "Actuarial Sciences",
-  "Question": "Do you like solving quantitative problems with accuracy?"
- },
- {
-  "Category": "Actuarial Sciences",
-  "Question": "Would you enjoy working as an actuary or data scientist?"
- },
- {
-  "Category": "Legal",
-  "Question": "Are you interested in laws, justice, or legal systems?"
- },
- {
-  "Category": "Legal",
-  "Question": "Do you enjoy reading and interpreting rules and regulations?"
- },
- {
-  "Category": "Legal",
-  "Question": "Can you argue your point logically and clearly?"
- },
- {
-  "Category": "Legal",
-  "Question": "Would you enjoy advocating for others in legal matters?"
- },
- {
-  "Category": "Legal",
-  "Question": "Are you passionate about fairness and ethics?"
- },
- {
-  "Category": "Legal",
-  "Question": "Do you enjoy reading and analyzing complex texts?"
- },
- {
-  "Category": "Legal",
-  "Question": "Would you like representing others in legal situations?"
- },
- {
-  "Category": "Legal",
-  "Question": "Are you interested in legal writing or research?"
- },
- {
-  "Category": "Legal",
-  "Question": "Would you enjoy working in courts or law firms?"
- },
- {
-  "Category": "Legal",
-  "Question": "Are you intrigued by legal debates and social justice?"
- },
- {
-  "Category": "Marketing",
-  "Question": "Do you enjoy promoting ideas or products?"
- },
- {
-  "Category": "Marketing",
-  "Question": "Are you good at understanding customer behavior?"
- },
- {
-  "Category": "Marketing",
-  "Question": "Do you like creating content that influences people?"
- },
- {
-  "Category": "Marketing",
-  "Question": "Are you familiar with branding, campaigns, or digital media?"
- },
- {
-  "Category": "Marketing",
-  "Question": "Would you enjoy analyzing trends to improve outreach?"
- },
- {
-  "Category": "Marketing",
-  "Question": "Are you good at crafting persuasive messages?"
- },
- {
-  "Category": "Marketing",
-  "Question": "Do you enjoy figuring out what makes people buy things?"
- },
- {
-  "Category": "Marketing",
-  "Question": "Would you like to lead brand strategy or marketing teams?"
- },
- {
-  "Category": "Marketing",
-  "Question": "Are you interested in social media or advertising trends?"
- },
- {
-  "Category": "Marketing",
-  "Question": "Do you enjoy measuring the effectiveness of campaigns?"
- },
- {
-  "Category": "Media & Communication",
-  "Question": "Are you comfortable speaking or writing in public?"
- },
- {
-  "Category": "Media & Communication",
-  "Question": "Do you enjoy creating content for media platforms?"
- },
- {
-  "Category": "Media & Communication",
-  "Question": "Are you interested in journalism, PR, or broadcasting?"
- },
- {
-  "Category": "Media & Communication",
-  "Question": "Do you enjoy storytelling and engaging with audiences?"
- },
- {
-  "Category": "Media & Communication",
-  "Question": "Would you enjoy using media to share news or ideas?"
- },
- {
-  "Category": "Media & Communication",
-  "Question": "Do you enjoy crafting stories or messages for different audiences?"
- },
- {
-  "Category": "Media & Communication",
-  "Question": "Are you curious about the impact of social and digital media?"
- },
- {
-  "Category": "Media & Communication",
-  "Question": "Would you like to work in TV, radio, or publishing?"
- },
- {
-  "Category": "Media & Communication",
-  "Question": "Are you interested in visual and digital storytelling?"
- },
- {
-  "Category": "Media & Communication",
-  "Question": "Do you enjoy interviews, documentaries, or podcasting?"
- },
- {
-  "Category": "Performing Arts",
-  "Question": "Do you enjoy singing, dancing, or acting?"
- },
- {
-  "Category": "Performing Arts",
-  "Question": "Are you confident performing in front of others?"
- },
- {
-  "Category": "Performing Arts",
-  "Question": "Do you practice a performing art in your free time?"
- },
- {
-  "Category": "Performing Arts",
-  "Question": "Would you like to perform professionally or as a career?"
- },
- {
-  "Category": "Performing Arts",
-  "Question": "Are you passionate about theater, music, or dance?"
- },
- {
-  "Category": "Performing Arts",
-  "Question": "Do you express yourself through movement or performance?"
- },
- {
-  "Category": "Performing Arts",
-  "Question": "Would you enjoy turning emotions into performance pieces?"
- },
- {
-  "Category": "Performing Arts",
-  "Question": "Do you like performing in front of an audience?"
- },
- {
-  "Category": "Performing Arts",
-  "Question": "Are you interested in stagecraft or directing?"
- },
- {
-  "Category": "Performing Arts",
-  "Question": "Do you enjoy rehearsing and perfecting a routine?"
- },
- {
-  "Category": "Sales",
-  "Question": "Do you enjoy convincing others about a product or idea?"
- },
- {
-  "Category": "Sales",
-  "Question": "Are you confident in communication and negotiation?"
- },
- {
-  "Category": "Sales",
-  "Question": "Do you enjoy reaching targets and closing deals?"
- },
- {
-  "Category": "Sales",
-  "Question": "Are you persistent even when hearing 'no'?"
- },
- {
-  "Category": "Sales",
-  "Question": "Would you enjoy a competitive, commission-based role?"
- },
- {
-  "Category": "Sales",
-  "Question": "Do you enjoy meeting new people and introducing them to products?"
- },
- {
-  "Category": "Sales",
-  "Question": "Are you driven by targets and performance-based rewards?"
- },
- {
-  "Category": "Sales",
-  "Question": "Would you like to work in retail, real estate, or tech sales?"
- },
- {
-  "Category": "Sales",
-  "Question": "Are you comfortable working under pressure?"
- },
- {
-  "Category": "Sales",
-  "Question": "Do you enjoy learning about products and customer needs?"
- },
- {
-  "Category": "Science & Maths",
-  "Question": "Are you curious about how things work scientifically?"
- },
- {
-  "Category": "Science & Maths",
-  "Question": "Do you enjoy solving logical or numerical problems?"
- },
- {
-  "Category": "Science & Maths",
-  "Question": "Are you interested in physics, chemistry, or math?"
- },
- {
-  "Category": "Science & Maths",
-  "Question": "Do you like conducting experiments or calculations?"
- },
- {
-  "Category": "Science & Maths",
-  "Question": "Would you enjoy researching scientific phenomena?"
- },
- {
-  "Category": "Science & Maths",
-  "Question": "Do you enjoy formulating hypotheses and testing them?"
- },
- {
-  "Category": "Science & Maths",
-  "Question": "Are you naturally curious about scientific explanations?"
- },
- {
-  "Category": "Science & Maths",
-  "Question": "Would you like to work in labs, observatories, or research?"
- },
- {
-  "Category": "Science & Maths",
-  "Question": "Do you enjoy writing scientific papers or findings?"
- },
- {
-  "Category": "Science & Maths",
-  "Question": "Are you excited by new scientific discoveries?"
- },
- {
-  "Category": "Social Sciences & Humanities",
-  "Question": "Are you curious about human behavior and society?"
- },
- {
-  "Category": "Social Sciences & Humanities",
-  "Question": "Do you enjoy reading about history, culture, or psychology?"
- },
- {
-  "Category": "Social Sciences & Humanities",
-  "Question": "Would you like to explore sociology, politics, or economics?"
- },
- {
-  "Category": "Social Sciences & Humanities",
-  "Question": "Are you interested in human rights, ethics, or philosophy?"
- },
- {
-  "Category": "Social Sciences & Humanities",
-  "Question": "Do you enjoy thinking critically about people and systems?"
- },
- {
-  "Category": "Social Sciences & Humanities",
-  "Question": "Do you enjoy debating social or ethical topics?"
- },
- {
-  "Category": "Social Sciences & Humanities",
-  "Question": "Would you like studying different cultures and their influence?"
- },
- {
-  "Category": "Social Sciences & Humanities",
-  "Question": "Are you interested in public policy, education, or development?"
- },
- {
-  "Category": "Social Sciences & Humanities",
-  "Question": "Would you enjoy working as a researcher or analyst?"
- },
- {
-  "Category": "Social Sciences & Humanities",
-  "Question": "Are you interested in how people think, feel, and act?"
- }
+  "Question": "Do you enjoy the intellectual challenge of reverse-engineering devices or software to uncover how they operate at a fundamental level?"
+},
 
-      
- ].sort(() => 0.5 - Math.random());
-            selectedQuestions = shuffled.slice(0, 30);
+{
+"Category": "Governance & Administration",
+"Question": "Do you possess a strong ability to methodically organize and coordinate multifaceted tasks, ensuring seamless execution across various projects or initiatives?"
+},
+{
+"Category": "Governance & Administration",
+"Question": "Are you deeply interested in the intricacies of public affairs, legal frameworks, or the responsibilities tied to civic engagement and governance?"
+},
+{
+"Category": "Governance & Administration",
+"Question": "Would you find fulfillment in contributing to the public sector by shaping initiatives that address societal needs and improve community welfare?"
+},
+{
+"Category": "Governance & Administration",
+"Question": "Do you thrive in environments where you can orchestrate large-scale events or manage diverse teams to achieve collective goals?"
+},
+{
+"Category": "Governance & Administration",
+"Question": "Are you motivated by the opportunity to influence policy decisions or enhance the efficiency of public operations for the greater good?"
+},
+{
+"Category": "Governance & Administration",
+"Question": "Are you drawn to taking on administrative leadership roles where strategic oversight and decision-making are central to your responsibilities?"
+},
+{
+"Category": "Governance & Administration",
+"Question": "Do you enjoy critically analyzing policies or governance systems to identify areas for reform or improvement in organizational structures?"
+},
+{
+"Category": "Governance & Administration",
+"Question": "Would you be inspired to pursue a career in civil services or public administration, working to implement policies that benefit society at large?"
+},
+{
+"Category": "Health, Medicine & Fitness",
+"Question": "Are you captivated by the complexities of biology, human health, or anatomical sciences, and eager to explore their practical applications?"
+},
+{
+"Category": "Health, Medicine & Fitness",
+"Question": "Do you find deep satisfaction in nurturing and safeguarding the health and well-being of others through compassionate care and support?"
+},
+{
+"Category": "Health, Medicine & Fitness",
+"Question": "Would you feel at ease working in high-stakes clinical or hospital environments where precision and empathy are critical to patient outcomes?"
+},
+{
+"Category": "Health, Medicine & Fitness",
+"Question": "Are you driven by a passion for promoting fitness and physical wellness, advocating for active lifestyles to improve quality of life?"
+},
+{
+"Category": "Health, Medicine & Fitness",
+"Question": "Are you inspired to pursue a meaningful career in healthcare or medical sciences, contributing to advancements in patient care and treatment?"
+},
+{
+"Category": "Health, Medicine & Fitness",
+"Question": "Do you aspire to become a doctor, nurse, or therapist, dedicating your professional life to diagnosing, treating, and supporting individuals?"
+},
+{
+"Category": "Health, Medicine & Fitness",
+"Question": "Do you derive fulfillment from assisting individuals in recovering from ailments or maintaining their health through personalized guidance?"
+},
+{
+"Category": "Health, Medicine & Fitness",
+"Question": "Are you committed to understanding and promoting the importance of nutrition and lifestyle choices in achieving holistic well-being?"
+},
+{
+"Category": "Health, Medicine & Fitness",
+"Question": "Would you find it rewarding to work in the fast-paced, impactful settings of hospitals or clinics, directly aiding patient recovery?"
+},
+{
+"Category": "Health, Medicine & Fitness",
+"Question": "Do you actively seek to stay informed about the latest research and breakthroughs in health sciences to enhance your knowledge and practice?"
+},
+{
+"Category": "Hospitality",
+"Question": "Do you take pride in creating warm, welcoming environments that make people feel comfortable and valued in any setting?"
+},
+{
+"Category": "Hospitality",
+"Question": "Are you adept at managing guest services and addressing a wide range of requests with efficiency, tact, and a customer-first approach?"
+},
+{
+"Category": "Hospitality",
+"Question": "Would you be excited to work in dynamic fields such as hotels, event management, or travel, enhancing experiences for diverse clientele?"
+},
+{
+"Category": "Hospitality",
+"Question": "Do you maintain a calm and patient demeanor when navigating challenging customer-facing roles, ensuring positive interactions?"
+},
+{
+"Category": "Hospitality",
+"Question": "Do you find joy in meticulously organizing dining experiences, accommodations, or curated events that leave lasting impressions?"
+},
+{
+"Category": "Hospitality",
+"Question": "Are you energized by the fast-paced, ever-changing nature of service environments where quick thinking and adaptability are key?"
+},
+{
+"Category": "Hospitality",
+"Question": "Are you skilled at anticipating and managing customer expectations to deliver exceptional service and satisfaction consistently?"
+},
+{
+"Category": "Hospitality",
+"Question": "Would you aspire to own or manage a hospitality business, overseeing operations and setting standards for excellence in service?"
+},
+{
+"Category": "Hospitality",
+"Question": "Do you take pleasure in designing and delivering memorable experiences that resonate with others on a personal level?"
+},
+{
+"Category": "Hospitality",
+"Question": "Are you intrigued by the fields of event planning or tourism, where you can create impactful journeys or gatherings for others?"
+},
+{
+"Category": "Actuarial Sciences",
+"Question": "Do you possess exceptional proficiency in mathematics and statistics, with a talent for applying these skills to complex analytical challenges?"
+},
+{
+"Category": "Actuarial Sciences",
+"Question": "Do you find satisfaction in manipulating extensive datasets and developing predictive models to forecast trends or outcomes?"
+},
+{
+"Category": "Actuarial Sciences",
+"Question": "Are you meticulously detail-oriented when handling numerical data, ensuring accuracy in every calculation and analysis?"
+},
+{
+"Category": "Actuarial Sciences",
+"Question": "Would you be intrigued by the challenge of assessing and managing risk for industries like insurance or finance, using data-driven insights?"
+},
+{
+"Category": "Actuarial Sciences",
+"Question": "Are you fascinated by the application of probability theories and financial forecasting to mitigate uncertainties in business contexts?"
+},
+{
+"Category": "Actuarial Sciences",
+"Question": "Do you enjoy diving deep into complex datasets to uncover patterns and correlations that inform strategic decision-making?"
+},
+{
+"Category": "Actuarial Sciences",
+"Question": "Would you find it rewarding to assist companies in making informed, data-driven decisions to optimize their financial stability?"
+},
+{
+"Category": "Actuarial Sciences",
+"Question": "Are you captivated by the intricacies of risk analysis and long-term financial planning, ensuring sustainable economic strategies?"
+},
+{
+"Category": "Actuarial Sciences",
+"Question": "Do you thrive on solving quantitative problems with precision, ensuring reliable and actionable results in every scenario?"
+},
+{
+"Category": "Actuarial Sciences",
+"Question": "Would you be motivated to pursue a career as an actuary or data scientist, leveraging analytical expertise to address real-world challenges?"
+},
+{
+"Category": "Legal",
+"Question": "Are you deeply intrigued by the structures of laws, the pursuit of justice, or the functioning of legal systems across different contexts?"
+},
+{
+"Category": "Legal",
+"Question": "Do you find intellectual stimulation in reading, interpreting, and applying complex rules and regulations to specific situations?"
+},
+{
+"Category": "Legal",
+"Question": "Are you able to present arguments with clarity and logical rigor, effectively persuading others in structured debates or discussions?"
+},
+{
+"Category": "Legal",
+"Question": "Would you find deep fulfillment in advocating for others’ rights or interests in legal matters, ensuring fair representation?"
+},
+{
+"Category": "Legal",
+"Question": "Are you driven by a passion for fairness, ethical principles, and the moral underpinnings of legal and social frameworks?"
+},
+{
+"Category": "Legal",
+"Question": "Do you derive satisfaction from analyzing and dissecting intricate legal texts to uncover nuanced meanings and implications?"
+},
+{
+"Category": "Legal",
+"Question": "Would you be inspired to represent individuals or entities in legal situations, championing their causes with dedication and skill?"
+},
+{
+"Category": "Legal",
+"Question": "Are you drawn to the meticulous processes of legal writing or research, contributing to the development of robust case strategies?"
+},
+{
+"Category": "Legal",
+"Question": "Would you find it rewarding to work in courtrooms or law firms, navigating the complexities of legal proceedings on a daily basis?"
+},
+{
+"Category": "Legal",
+"Question": "Are you captivated by the dynamics of legal debates and the broader implications of social justice within legal frameworks?"
+},
+{
+"Category": "Marketing",
+"Question": "Do you find excitement in promoting innovative ideas, products, or services to diverse audiences with creative strategies?"
+},
+{
+"Category": "Marketing",
+"Question": "Are you adept at decoding consumer behavior patterns, using insights to tailor impactful marketing campaigns or initiatives?"
+},
+{
+"Category": "Marketing",
+"Question": "Do you take pleasure in crafting compelling content that resonates with people, influencing their perceptions or decisions?"
+},
+{
+"Category": "Marketing",
+"Question": "Are you well-versed in the intricacies of branding, campaign development, or leveraging digital media to amplify reach and engagement?"
+},
+{
+"Category": "Marketing",
+"Question": "Would you be motivated to analyze market trends and consumer data to refine outreach strategies and maximize impact?"
+},
+{
+"Category": "Marketing",
+"Question": "Are you skilled at constructing persuasive messages that effectively communicate value propositions to targeted demographics?"
+},
+{
+"Category": "Marketing",
+"Question": "Do you enjoy unraveling the psychological and social factors that drive purchasing decisions and consumer loyalty?"
+},
+{
+"Category": "Marketing",
+"Question": "Would you aspire to lead brand strategy or oversee marketing teams, steering creative and analytical efforts towards success?"
+},
+{
+"Category": "Marketing",
+"Question": "Are you intrigued by the evolving landscapes of social media and advertising trends, staying ahead of digital innovations?"
+},
+{
+"Category": "Marketing",
+"Question": "Do you find satisfaction in measuring and optimizing the effectiveness of marketing campaigns through data-driven evaluation?"
+},
+{
+"Category": "Media & Communication",
+"Question": "Are you confident and articulate when speaking or writing for public audiences, conveying ideas with clarity and impact?"
+},
+{
+"Category": "Media & Communication",
+"Question": "Do you derive joy from producing engaging content tailored for diverse media platforms, reaching varied audiences effectively?"
+},
+{
+"Category": "Media & Communication",
+"Question": "Are you passionate about pursuing a career in journalism, public relations, or broadcasting to inform and connect with the public?"
+},
+{
+"Category": "Media & Communication",
+"Question": "Do you find fulfillment in storytelling that captivates and builds meaningful connections with audiences across different mediums?"
+},
+{
+"Category": "Media & Communication",
+"Question": "Would you be inspired to leverage media platforms to disseminate news, ideas, or cultural narratives that shape public discourse?"
+},
+{
+"Category": "Media & Communication",
+"Question": "Do you enjoy tailoring stories or messages to resonate with specific audiences, ensuring relevance and emotional impact?"
+},
+{
+"Category": "Media & Communication",
+"Question": "Are you intrigued by the transformative effects of social and digital media on communication, culture, and information sharing?"
+},
+{
+"Category": "Media & Communication",
+"Question": "Would you be excited to work in dynamic fields such as television, radio, or publishing, shaping content for broad audiences?"
+},
+{
+"Category": "Media & Communication",
+"Question": "Are you drawn to the art of visual and digital storytelling, using imagery and technology to convey powerful narratives?"
+},
+{
+"Category": "Media & Communication",
+"Question": "Do you find fulfillment in creating content like interviews, documentaries, or podcasts that inform, entertain, or inspire listeners?"
+},
+{
+"Category": "Performing Arts",
+"Question": "Do you have a deep passion for singing, dancing, or acting, finding joy in expressing yourself through these artistic mediums?"
+},
+{
+"Category": "Performing Arts",
+"Question": "Are you at ease and confident when performing in front of others, captivating audiences with your talent and presence?"
+},
+{
+"Category": "Performing Arts",
+"Question": "Do you dedicate significant personal time to practicing and honing your skills in a specific performing art form?"
+},
+{
+"Category": "Performing Arts",
+"Question": "Would you be thrilled to transform your passion for performance into a professional career, showcasing your artistry on larger stages?"
+},
+{
+"Category": "Performing Arts",
+"Question": "Are you deeply inspired by the expressive power of theater, music, or dance, seeing them as vital outlets for creativity?"
+},
+{
+"Category": "Performing Arts",
+"Question": "Do you naturally express your innermost thoughts and emotions through movement, performance, or dramatic interpretation?"
+},
+{
+"Category": "Performing Arts",
+"Question": "Would you find it profoundly rewarding to channel complex emotions into performance pieces that resonate with diverse audiences?"
+},
+{
+"Category": "Performing Arts",
+"Question": "Do you thrive on the energy of live performances, relishing the opportunity to connect with an audience in real-time?"
+},
+{
+"Category": "Performing Arts",
+"Question": "Are you intrigued by the behind-the-scenes aspects of performance, such as stagecraft, directing, or production design?"
+},
+{
+"Category": "Performing Arts",
+"Question": "Do you take pleasure in the discipline of rehearsing and perfecting routines to achieve mastery and deliver flawless performances?"
+},
+{
+"Category": "Sales",
+"Question": "Do you find excitement in persuading others to embrace a product, service, or idea through compelling arguments and enthusiasm?"
+},
+{
+"Category": "Sales",
+"Question": "Are you self-assured in your communication and negotiation skills, adept at building rapport and closing agreements effectively?"
+},
+{
+"Category": "Sales",
+"Question": "Do you derive motivation from achieving ambitious targets and sealing deals that contribute to personal and organizational success?"
+},
+{
+"Category": "Sales",
+"Question": "Are you resilient and persistent, maintaining a positive outlook even when faced with rejection or challenging sales scenarios?"
+},
+{
+"Category": "Sales",
+"Question": "Would you thrive in a competitive, commission-based environment where your performance directly correlates with financial rewards?"
+},
+{
+"Category": "Sales",
+"Question": "Do you enjoy engaging with new individuals, introducing them to products or services that meet their needs or aspirations?"
+},
+{
+"Category": "Sales",
+"Question": "Are you fueled by the challenge of meeting and exceeding sales targets, finding satisfaction in performance-based recognition?"
+},
+{
+"Category": "Sales",
+"Question": "Would you be excited to pursue a career in diverse sales sectors such as retail, real estate, or technology, leveraging your skills?"
+},
+{
+"Category": "Sales",
+"Question": "Are you comfortable navigating high-pressure situations, maintaining focus and composure to achieve desired sales outcomes?"
+},
+{
+"Category": "Sales",
+"Question": "Do you take pride in deeply understanding product features and customer needs to tailor solutions that drive satisfaction and loyalty?"
+},
+{
+"Category": "Science & Maths",
+"Question": "Are you profoundly curious about the scientific principles that govern the natural world, eager to uncover how phenomena operate?"
+},
+{
+"Category": "Science & Maths",
+"Question": "Do you find intellectual fulfillment in tackling intricate logical or numerical problems, deriving solutions through critical analysis?"
+},
+{
+"Category": "Science & Maths",
+"Question": "Are you captivated by the foundational concepts of physics, chemistry, or mathematics, seeking to explore their real-world applications?"
+},
+{
+"Category": "Science & Maths",
+"Question": "Do you enjoy the hands-on process of conducting experiments or performing calculations to test theories and validate findings?"
+},
+{
+"Category": "Science & Maths",
+"Question": "Would you be inspired to dedicate yourself to researching complex scientific phenomena, contributing to advancements in knowledge?"
+},
+{
+"Category": "Science & Maths",
+"Question": "Do you take pleasure in formulating detailed hypotheses and rigorously testing them to uncover new insights or confirm existing theories?"
+},
+{
+  "Category": "Social Sciences & Humanities",
+  "Question": "Are you deeply intrigued by the complexities of human behavior and the intricate dynamics that shape societal structures and interactions?"
+},
+{
+  "Category": "Social Sciences & Humanities",
+  "Question": "Do you find intellectual satisfaction in delving into extensive readings about history, cultural developments, or psychological theories to understand human experiences?"
+},
+{
+  "Category": "Social Sciences & Humanities",
+  "Question": "Would you be motivated to deeply explore the interconnected fields of sociology, politics, or economics to analyze their impact on global and local communities?"
+},
+{
+  "Category": "Social Sciences & Humanities",
+  "Question": "Are you passionate about examining critical issues like human rights, ethical dilemmas, or philosophical concepts that influence moral and societal frameworks?"
+},
+{
+  "Category": "Social Sciences & Humanities",
+  "Question": "Do you derive fulfillment from engaging in critical thinking about the behaviors of individuals and the systemic structures that govern social order?"
+},
+{
+  "Category": "Social Sciences & Humanities",
+  "Question": "Do you thrive on participating in thoughtful debates concerning social or ethical issues, challenging assumptions and proposing nuanced perspectives?"
+},
+{
+  "Category": "Social Sciences & Humanities",
+  "Question": "Would you be inspired to immerse yourself in the study of diverse cultures and their profound influences on global interconnectedness and identity?"
+},
+{
+  "Category": "Social Sciences & Humanities",
+  "Question": "Are you drawn to the formulation and analysis of public policy, educational systems, or developmental initiatives aimed at societal progress?"
+},
+{
+  "Category": "Social Sciences & Humanities",
+  "Question": "Would you find a career as a researcher or analyst rewarding, where you can contribute to the understanding of social trends and human conditions through data and theory?"
+},
+{
+  "Category": "Social Sciences & Humanities",
+  "Question": "Are you fascinated by the intricacies of how individuals think, feel, and act within various social contexts, seeking to uncover the drivers of human emotion and decision-making?"
+}
+      ].sort(() => 0.5 - Math.random());
+      selectedQuestions = shuffled.slice(0, 3);
+    }
+
+    function showMessage(message, isError = true, targetElement = null) {
+      if (!targetElement) {
+        alert(message);
+        return;
+      }
+      targetElement.textContent = message;
+      if (isError) {
+        targetElement.classList.remove("text-green-700");
+        targetElement.classList.add("text-red-600");
+      } else {
+        targetElement.classList.remove("text-red-600");
+        targetElement.classList.add("text-green-700");
+      }
+    }
+
+    function showQuestion() {
+      const currentQuestion = selectedQuestions[currentQuestionIndex];
+      questionContainer.textContent = currentQuestion.Question;
+      answerForm.response.value = "";
+      reasonInput.value = "";
+    }
+
+    signupButton.addEventListener("click", function () {
+      signupMessage.textContent = "";
+      const name = document.getElementById("signupName").value.trim();
+      const email = document.getElementById("signupEmail").value.trim();
+      const password = document.getElementById("signupPassword").value;
+
+      if (!name) {
+        showMessage("Please enter your name.", true, signupMessage);
+        return;
+      }
+      if (!email) {
+        showMessage("Please enter your email.", true, signupMessage);
+        return;
+      }
+      if (!password) {
+        showMessage("Please enter your password.", true, signupMessage);
+        return;
+      }
+
+      const existingUser = users.find(
+        (u) => u.email.toLowerCase() === email.toLowerCase()
+      );
+      if (existingUser) {
+        showMessage(
+          "Email already exists. Please go to the login page and login.",
+          true,
+          signupMessage
+        );
+        signupForm.classList.add("hidden");
+        loginForm.classList.remove("hidden");
+        return;
+      }
+
+      users.push({ name, email, password });
+      localStorage.setItem("users", JSON.stringify(users));
+      showMessage("Signup successful! You can now log in.", false, signupMessage);
+      signupForm.reset();
+      signupForm.classList.add("hidden");
+      loginForm.classList.remove("hidden");
+    });
+
+    loginButton.addEventListener("click", function () {
+      loginMessage.textContent = "";
+      const email = document.getElementById("loginEmail").value.trim();
+      const password = document.getElementById("loginPassword").value;
+
+      if (!email) {
+        showMessage("Please enter your email.", true, loginMessage);
+        return;
+      }
+      if (!password) {
+        showMessage("Please enter your password.", true, loginMessage);
+        return;
+      }
+
+      const user = users.find(
+        (user) =>
+          user.email.toLowerCase() === email.toLowerCase() && user.password === password
+      );
+      if (user) {
+        currentUser = user;
+        loginForm.reset();
+        loginForm.classList.add("hidden");
+        startButton.classList.remove("hidden");
+        appTitle.textContent = `Welcome, ${user.name}`;
+        loginMessage.textContent = "";
+      } else {
+        showMessage(
+          "Email not found or password incorrect. Please sign up.",
+          true,
+          loginMessage
+        );
+        loginForm.reset();
+        loginForm.classList.add("hidden");
+        signupForm.classList.remove("hidden");
+      }
+    });
+
+    switchToLogin.addEventListener("click", function (event) {
+      event.preventDefault();
+      signupMessage.textContent = "";
+      loginMessage.textContent = "";
+      signupForm.classList.add("hidden");
+      loginForm.classList.remove("hidden");
+    });
+
+    switchToSignup.addEventListener("click", function (event) {
+      event.preventDefault();
+      signupMessage.textContent = "";
+      loginMessage.textContent = "";
+      loginForm.classList.add("hidden");
+      signupForm.classList.remove("hidden");
+    });
+
+    quizStartButton.addEventListener("click", function () {
+      selectRandomQuestions();
+      startButton.classList.add("hidden");
+      questionSection.classList.remove("hidden");
+      currentQuestionIndex = 0;
+      responses = [];
+      for (const key in categoryCounts) {
+        delete categoryCounts[key];
+      }
+      updateAppTitle();
+      showQuestion();
+      prevButton.disabled = true;
+      nextButton.disabled = false;
+    });
+
+    prevButton.addEventListener("click", function () {
+      if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        updateAppTitle();
+        showQuestion();
+        if (responses[currentQuestionIndex]) {
+          answerForm.response.value = responses[currentQuestionIndex].answer;
+          reasonInput.value = responses[currentQuestionIndex].reason;
+        } else {
+          answerForm.response.value = "";
+          reasonInput.value = "";
+        }
+      }
+      prevButton.disabled = currentQuestionIndex === 0;
+      nextButton.disabled = false;
+    });
+
+    nextButton.addEventListener("click", function () {
+      const userResponse = answerForm.response.value;
+      const reason = reasonInput.value.trim();
+
+      if (!userResponse) {
+        alert("Please select an answer.");
+        return;
+      }
+      if (!reason) {
+        alert("Please provide a reason for your answer.");
+        return;
+      }
+
+      const currentCategory = selectedQuestions[currentQuestionIndex].Category;
+
+      // If updating an existing response, decrement the old count
+      if (responses[currentQuestionIndex]) {
+        const prevAnswer = responses[currentQuestionIndex].answer;
+        if (prevAnswer === "Strongly Agree" || prevAnswer === "Agree") {
+          categoryCounts[currentCategory].positive--;
+        } else if (prevAnswer === "Strongly Disagree" || prevAnswer === "Disagree") {
+          categoryCounts[currentCategory].negative--;
+        } else {
+          categoryCounts[currentCategory].neutral--;
+        }
+      }
+
+      // Initialize category counts if not exists
+      if (!categoryCounts[currentCategory]) {
+        categoryCounts[currentCategory] = { positive: 0, neutral: 0, negative: 0 };
+      }
+
+      // Increment the appropriate count based on the response
+      if (userResponse === "Strongly Agree" || userResponse === "Agree") {
+        categoryCounts[currentCategory].positive++;
+      } else if (userResponse === "Strongly Disagree" || userResponse === "Disagree") {
+        categoryCounts[currentCategory].negative++;
+      } else {
+        categoryCounts[currentCategory].neutral++;
+      }
+
+      responses[currentQuestionIndex] = {
+        question: selectedQuestions[currentQuestionIndex].Question,
+        answer: userResponse,
+        reason: reason,
+      };
+
+      currentQuestionIndex++;
+
+      if (currentQuestionIndex < selectedQuestions.length) {
+        updateAppTitle();
+        showQuestion();
+        if (responses[currentQuestionIndex]) {
+          answerForm.response.value = responses[currentQuestionIndex].answer;
+          reasonInput.value = responses[currentQuestionIndex].reason;
+        } else {
+          answerForm.response.value = "";
+          reasonInput.value = "";
+        }
+      } else {
+        generateReport();
+        appTitle.textContent = `Thank you, ${currentUser.name}`;
+        questionCount.textContent = "";
+        questionSection.classList.add("hidden");
+        reportSection.classList.remove("hidden");
+      }
+
+      prevButton.disabled = currentQuestionIndex === 0;
+      nextButton.disabled = currentQuestionIndex >= selectedQuestions.length;
+    });
+
+    function updateAppTitle() {
+      appTitle.textContent = `Question ${currentQuestionIndex + 1}/${
+        selectedQuestions.length
+      } - Welcome, ${currentUser.name}`;
+      questionCount.textContent = `Question ${currentQuestionIndex + 1}/${
+        selectedQuestions.length
+      }`;
+    }
+
+    function generatePersonalityRemarks(responses) {
+      let positiveCount = responses.reduce(
+        (acc, cur) =>
+          acc + (cur.answer === "Strongly Agree" || cur.answer === "Agree" ? 1 : 0),
+        0
+      );
+      let personality = "";
+      if (positiveCount >= 25) {
+        personality =
+          "You have a highly positive and enthusiastic personality, showing great openness and eagerness to engage with new ideas and opportunities.";
+      } else if (positiveCount >= 18) {
+        personality =
+          "You exhibit a balanced personality with a tendency towards positivity, balancing enthusiasm with thoughtful consideration.";
+      } else if (positiveCount >= 10) {
+        personality =
+          "You tend to be more cautious and neutral, often weighing options carefully before committing to new ideas or opportunities.";
+      } else {
+        personality =
+          "You have a reserved and critical personality, often expressing skepticism or disagreement, valuing thorough analysis and reflection.";
+      }
+      return personality;
+    }
+    function getProminentCategory() {
+      let maxPositive = 0;
+      let prominentCategory = "";
+      for (const category in categoryCounts) {
+        if (categoryCounts[category].positive > maxPositive) {
+          maxPositive = categoryCounts[category].positive;
+          prominentCategory = category;
+        }
+      }
+      return prominentCategory;
+    }
+
+    function generateReport() {
+      let reportText = `Personality Report for ${currentUser.name}\n\n`;
+      responses.forEach((response, index) => {
+        reportText += `Q${index + 1}: ${response.question}\nAnswer: ${response.answer}\nReason: ${response.reason}\n\n`;
+      });
+      const remarks = generatePersonalityRemarks(responses);
+      const prominentCategory = getProminentCategory();
+      reportText += `--- Personality Remarks:\n${remarks}\n\nMost Prominent Category: ${prominentCategory}`;
+      reportContent.textContent = reportText;
+    }
+
+    function drawGraph() {
+      const ctx = document.getElementById("responseChart").getContext("2d");
+      if (window.responseChartInstance) {
+        window.responseChartInstance.destroy();
+      }
+      const labels = Object.keys(categoryCounts);
+      const positiveCounts = labels.map((label) => categoryCounts[label].positive);
+      const neutralCounts = labels.map((label) => categoryCounts[label].neutral);
+      const negativeCounts = labels.map((label) => categoryCounts[label].negative);
+
+      window.responseChartInstance = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: "Positive Responses (Strongly Agree/Agree)",
+              data: positiveCounts,
+              backgroundColor: "rgba(76, 175, 80, 0.6)", // Green for positive
+            },
+            {
+              label: "Neutral Responses",
+              data: neutralCounts,
+              backgroundColor: "rgba(255, 159, 64, 0.6)", // Orange for neutral
+            },
+            {
+              label: "Negative Responses (Disagree/Strongly Disagree)",
+              data: negativeCounts,
+              backgroundColor: "rgba(244, 67, 54, 0.6)", // Red for negative
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                precision: 0,
+              },
+            },
+          },
+        },
+      });
+    }
+
+    downloadReport.addEventListener("click", async function () {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      const margin = 15;
+      const pageHeight = doc.internal.pageSize.height;
+      const pageWidth = doc.internal.pageSize.width;
+      let y = margin + 10;
+      const lineHeight = 8;
+
+      // Draw border rectangle
+      doc.setDrawColor(117, 75, 162); // purple border color
+      doc.setLineWidth(1.5);
+      doc.rect(margin / 2, margin / 2, pageWidth - margin, pageHeight - margin);
+
+      // Add multiple small watermark texts diagonally tiled
+      doc.setTextColor(200, 200, 200);
+      doc.setFontSize(15);
+      doc.setFont("helvetica", "italic");
+      const watermarkText = "Career Spark";
+      const stepX = 80;
+      const stepY = 60;
+      for (let x = 0; x < pageWidth; x += stepX) {
+        for (let yPos = 0; yPos < pageHeight; yPos += stepY) {
+          doc.text(watermarkText, x, yPos, { angle: 45, opacity: 0.05 });
+        }
+      }
+      doc.setTextColor(0, 0, 0);
+      doc.setFont("Courier", "normal");
+      doc.setFontSize(16);
+
+      doc.text(`Personality Report for ${currentUser.name}`, margin, y);
+      y += lineHeight * 2;
+
+      responses.forEach((response, index) => {
+        const questionText = `Q${index + 1}: ${response.question}`;
+        const answerText = `Answer: ${response.answer}`;
+        const reasonText = `Reason: ${response.reason}`;
+
+        const splitQuestion = doc.splitTextToSize(questionText, pageWidth - 2 * margin);
+        const splitAnswer = doc.splitTextToSize(answerText, pageWidth - 2 * margin);
+        const splitReason = doc.splitTextToSize(reasonText, pageWidth - 2 * margin);
+
+        if (
+          y + (splitQuestion.length + splitAnswer.length + splitReason.length) * lineHeight >
+          pageHeight - margin
+        ) {
+          doc.addPage();
+          
+          doc.setDrawColor(117, 75, 162);
+          doc.setLineWidth(1.5);
+          doc.rect(margin / 2, margin / 2, pageWidth - margin, pageHeight - margin);
+          // Add tiled watermark on new page
+          doc.setTextColor(200, 200, 200);
+          doc.setFontSize(20);
+          doc.setFont("helvetica", "bold");
+          for (let x = 0; x < pageWidth; x += stepX) {
+            for (let yPos = 0; yPos < pageHeight; yPos += stepY) {
+              doc.text(watermarkText, x, yPos, { angle: 45, opacity: 0.05 });
+            }
+          }
+          doc.setTextColor(0, 0, 0);
+          doc.setFont("Courier", "normal");
+          y = margin + 10;
         }
 
-        function showMessage(message, isError = true, targetElement = null) {
-            if (!targetElement) {
-                alert(message);
-                return;
-            }
-            targetElement.textContent = message;
-            if (isError) {
-                targetElement.classList.remove('text-green-700');
-                targetElement.classList.add('text-red-600');
-            } else {
-                targetElement.classList.remove('text-red-600');
-                targetElement.classList.add('text-green-700');
-            }
+        doc.text(splitQuestion, margin, y);
+        y += lineHeight * splitQuestion.length;
+        doc.text(splitAnswer, margin, y);
+        y += lineHeight * splitAnswer.length;
+        doc.text(splitReason, margin, y);
+        y += lineHeight * splitReason.length + lineHeight;
+      });
+
+      const remarks = generatePersonalityRemarks(responses);
+      const prominentCategory = getProminentCategory();
+      const remarksTitle = "--- Personality Remarks:";
+      const splitRemarksTitle = doc.splitTextToSize(remarksTitle, pageWidth - 2 * margin);
+      const splitRemarks = doc.splitTextToSize(remarks, pageWidth - 2 * margin);
+      const categoryTitle = `Most Prominent Category: ${prominentCategory}`;
+      const splitCategoryTitle = doc.splitTextToSize(categoryTitle, pageWidth - 2 * margin);
+
+      // Use smaller font size for remarks to fit better
+      const remarksFontSize = 12;
+      const remarksLineHeight = 7;
+
+      if (
+        y +
+          (splitRemarksTitle.length * remarksLineHeight +
+            splitRemarks.length * remarksLineHeight +
+            splitCategoryTitle.length * remarksLineHeight) +
+          90 >
+        pageHeight - margin
+      ) {
+        doc.addPage();
+        // Draw border on new page
+        doc.setDrawColor(117, 75, 162);
+        doc.setLineWidth(1.5);
+        doc.rect(margin / 2, margin / 2, pageWidth - margin, pageHeight - margin);
+        // Add tiled watermark on new page
+        doc.setTextColor(200, 200, 200);
+        doc.setFontSize(20);
+        doc.setFont("helvetica", "bold");
+        for (let x = 0; x < pageWidth; x += stepX) {
+          for (let yPos = 0; yPos < pageHeight; yPos += stepY) {
+            doc.text(watermarkText, x, yPos, { angle: 45, opacity: 0.05 });
+          }
         }
+        doc.setTextColor(0, 0, 0);
+        doc.setFont("Courier", "normal");
+        y = margin + 10;
+      }
 
-        function showQuestion() {
-            const currentQuestion = selectedQuestions[currentQuestionIndex];
-            questionContainer.textContent = currentQuestion.Question; 
-            answerForm.response.value = ""; 
-            reasonInput.value = ""; 
+      doc.setFontSize(remarksFontSize);
+      doc.text(splitRemarksTitle, margin, y);
+      y += remarksLineHeight * splitRemarksTitle.length;
+      doc.text(splitRemarks, margin, y);
+      y += remarksLineHeight * splitRemarks.length;
+      doc.text(splitCategoryTitle, margin, y);
+      y += remarksLineHeight * splitCategoryTitle.length;
+
+      // Reset font size for footer and image
+      doc.setFontSize(10);
+
+      // Add footer
+      doc.text("Generated by Career Spark", margin, pageHeight - margin + 2);
+
+      // Add chart image below text
+      try {
+        const canvas = document.getElementById("responseChart");
+        if (!canvas) throw new Error("Chart canvas not found");
+
+        // Create a new canvas to scale up the chart for better resolution
+        const scaleFactor = 3;
+        const scaledCanvas = document.createElement("canvas");
+        scaledCanvas.width = canvas.width * scaleFactor;
+        scaledCanvas.height = canvas.height * scaleFactor;
+        const scaledCtx = scaledCanvas.getContext("2d");
+        scaledCtx.scale(scaleFactor, scaleFactor);
+        scaledCtx.drawImage(canvas, 0, 0);
+
+        const imgData = scaledCanvas.toDataURL("image/png");
+
+        // Calculate image width and height to fit page width with margin
+        const imgProps = doc.getImageProperties(imgData);
+        const pdfWidth = pageWidth - 2 * margin;
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+        // Add new page if not enough space
+        if (y + pdfHeight + 20 > pageHeight) {
+          doc.addPage();
+          // Draw border on new page
+          doc.setDrawColor(117, 75, 162);
+          doc.setLineWidth(1.5);
+          doc.rect(margin / 2, margin / 2, pageWidth - margin, pageHeight - margin);
+          // Add tiled watermark on new page
+          doc.setTextColor(200, 200, 200);
+          doc.setFontSize(20);
+          doc.setFont("helvetica", "bold");
+          for (let x = 0; x < pageWidth; x += stepX) {
+            for (let yPos = 0; yPos < pageHeight; yPos += stepY) {
+              doc.text(watermarkText, x, yPos, { angle: 45, opacity: 0.05 });
+            }
+          }
+          doc.setTextColor(0, 0, 0);
+          y = margin + 10;
+        } else {
+          y += 10;
         }
+        doc.addImage(imgData, "PNG", margin, y, pdfWidth, pdfHeight);
+      } catch (error) {
+        console.error("Error adding chart image to PDF:", error);
+      }
 
-        signupButton.addEventListener('click', function () {
-            signupMessage.textContent = '';
-            const name = document.getElementById('signupName').value.trim();
-            const email = document.getElementById('signupEmail').value.trim();
-            const password = document.getElementById('signupPassword').value;
+      doc.save("personality_report.pdf");
+    });
 
-            if (!name) {
-                showMessage('Please enter your name.', true, signupMessage);
-                return;
-            }
-            if (!email) {
-                showMessage('Please enter your email.', true, signupMessage);
-                return;
-            }
-            if (!password) {
-                showMessage('Please enter your password.', true, signupMessage);
-                return;
-            }
+    viewGraphButton.addEventListener("click", () => {
+      mainContainer.classList.add("hidden");
+      graphPage.classList.remove("hidden");
+      drawGraph();
+    });
 
-            const existingUser   = users.find(u => u.email.toLowerCase() === email.toLowerCase());
-            if (existingUser  ) {
-                showMessage('Email already exists. Please go to the login page and login.', true, signupMessage);
-                signupForm.classList.add('hidden');
-                loginForm.classList.remove('hidden');
-                return;
-            }
-
-            users.push({ name, email, password });
-            localStorage.setItem('users', JSON.stringify(users));
-            showMessage('Signup successful! You can now log in.', false, signupMessage);
-            signupForm.reset();
-            signupForm.classList.add('hidden');
-            loginForm.classList.remove('hidden');
-        });
-
-        loginButton.addEventListener('click', function () {
-            loginMessage.textContent = '';
-            const email = document.getElementById('loginEmail').value.trim();
-            const password = document.getElementById('loginPassword').value;
-
-            if (!email) {
-                showMessage('Please enter your email.', true, loginMessage);
-                return;
-            }
-            if (!password) {
-                showMessage('Please enter your password.', true, loginMessage);
-                return;
-            }
-
-            const user = users.find(user => user.email.toLowerCase() === email.toLowerCase() && user.password === password);
-            if (user) {
-                currentUser   = user;
-                loginForm.reset();
-                loginForm.classList.add('hidden');
-                startButton.classList.remove('hidden');
-                appTitle.textContent = `Welcome, ${user.name}`;
-                loginMessage.textContent = '';
-            } else {
-                showMessage('Email not found or password incorrect. Please sign up.', true, loginMessage);
-                loginForm.reset();
-                loginForm.classList.add('hidden');
-                signupForm.classList.remove('hidden');
-            }
-        });
-
-        switchToLogin.addEventListener('click', function (event) {
-            event.preventDefault();
-            signupMessage.textContent = '';
-            loginMessage.textContent = '';
-            signupForm.classList.add('hidden');
-            loginForm.classList.remove('hidden');
-        });
-
-        switchToSignup.addEventListener('click', function (event) {
-            event.preventDefault();
-            signupMessage.textContent = '';
-            loginMessage.textContent = '';
-            loginForm.classList.add('hidden');
-            signupForm.classList.remove('hidden');
-        });
-
-        quizStartButton.addEventListener('click', function () {
-            selectRandomQuestions();
-            startButton.classList.add('hidden');
-            questionSection.classList.remove('hidden');
-            currentQuestionIndex = 0;
-            responses = [];
-            for (const key in categoryCounts) {
-                delete categoryCounts[key];
-            }
-            updateAppTitle();
-            showQuestion();
-            prevButton.disabled = true;
-            nextButton.disabled = false;
-        });
-
-        prevButton.addEventListener('click', function () {
-            if (currentQuestionIndex > 0) {
-                currentQuestionIndex--;
-                updateAppTitle();
-                showQuestion();
-                if (responses[currentQuestionIndex]) {
-                    answerForm.response.value = responses[currentQuestionIndex].answer;
-                    reasonInput.value = responses[currentQuestionIndex].reason;
-                } else {
-                    answerForm.response.value = "";
-                    reasonInput.value = "";
-                }
-            }
-            prevButton.disabled = currentQuestionIndex === 0;
-            nextButton.disabled = false;
-        });
-
-        nextButton.addEventListener('click', function () {
-            const userResponse = answerForm.response.value;
-            const reason = reasonInput.value.trim();
-
-            if (!userResponse) {
-                alert('Please select an answer.');
-                return;
-            }
-            if (!reason) {
-                alert('Please provide a reason for your answer.');
-                return;
-            }
-
-            const currentCategory = selectedQuestions[currentQuestionIndex].Category;
-
-            if (responses[currentQuestionIndex]) {
-                const prevAnswer = responses[currentQuestionIndex].answer;
-                if (prevAnswer === "Yes") {
-                    categoryCounts[currentCategory].yes--;
-                } else {
-                    categoryCounts[currentCategory].no--;
-                }
-            }
-
-            if (!categoryCounts[currentCategory]) {
-                categoryCounts[currentCategory] = { yes: 0, no: 0 };
-            }
-            if (userResponse === "Yes") {
-                categoryCounts[currentCategory].yes++;
-            } else {
-                categoryCounts[currentCategory].no++;
-            }
-
-            responses[currentQuestionIndex] = {
-                question: selectedQuestions[currentQuestionIndex].Question,
-                answer: userResponse,
-                reason: reason
-            };
-
-            currentQuestionIndex++;
-
-            if (currentQuestionIndex < selectedQuestions.length) {
-                updateAppTitle();
-                showQuestion();
-                if (responses[currentQuestionIndex]) {
-                    answerForm.response.value = responses[currentQuestionIndex].answer;
-                    reasonInput.value = responses[currentQuestionIndex].reason;
-                } else {
-                    answerForm.response.value = "";
-                    reasonInput.value = "";
-                }
-            } else {
-                generateReport();
-                appTitle.textContent = `Thank you, ${currentUser.name}`;
-                questionCount.textContent = '';
-                questionSection.classList.add('hidden');
-                reportSection.classList.remove('hidden');
-            }
-
-            prevButton.disabled = currentQuestionIndex === 0;
-            nextButton.disabled = currentQuestionIndex >= selectedQuestions.length;
-        });
-
-        function updateAppTitle() {
-            appTitle.textContent = `Question ${currentQuestionIndex + 1}/${selectedQuestions.length} - Welcome, ${currentUser.name}`;
-            questionCount.textContent = `Question ${currentQuestionIndex + 1}/${selectedQuestions.length}`;
-        }
-
-        function generatePersonalityRemarks(responses) {
-            let yesCount = responses.reduce((acc, cur) => acc + (cur.answer === "Yes" ? 1 : 0), 0);
-            let personality = "";
-            if (yesCount >= 25) {
-                personality = "You have a highly positive and proactive personality, showing great enthusiasm and openness.";
-            } else if (yesCount >= 18) {
-                personality = "You have a balanced personality with a good mix of positivity and caution.";
-            } else if (yesCount >= 10) {
-                personality = "You tend to be more cautious and reserved, preferring stability and routine.";
-            } else {
-                personality = "You have a very reserved and introspective personality, valuing careful thought and reflection.";
-            }
-            return personality;
-        }
-
-        function getProminentCategory() {
-            let maxYes = 0;
-            let prominentCategory = '';
-            for (const category in categoryCounts) {
-                if (categoryCounts[category].yes > maxYes) {
-                    maxYes = categoryCounts[category].yes;
-                    prominentCategory = category;
-                }
-            }
-            return prominentCategory;
-        }
-
-        function generateReport() {
-            let reportText = `Personality Report for ${currentUser.name}\n\n`;
-            responses.forEach((response, index) => {
-                reportText += `Q${index + 1}: ${response.question}\nAnswer: ${response.answer}\nReason: ${response.reason}\n\n`;
-            });
-            const remarks = generatePersonalityRemarks(responses);
-            const prominentCategory = getProminentCategory();
-            reportText += `--- Personality Remarks:\n${remarks}\n\nMost Prominent Category: ${prominentCategory}`;
-            reportContent.textContent = reportText;
-        }
-
-        function drawGraph() {
-            const ctx = document.getElementById('responseChart').getContext('2d');
-            if (window.responseChartInstance) {
-                window.responseChartInstance.destroy();
-            }
-            const labels = Object.keys(categoryCounts);
-            const yesCounts = labels.map(label => categoryCounts[label].yes);
-            const noCounts = labels.map(label => categoryCounts[label].no);
-
-            window.responseChartInstance = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'Yes Responses',
-                            data: yesCounts,
-                            backgroundColor: 'rgba(255, 192, 192, 0.6)',
-                        },
-                        {
-                            label: 'No Responses',
-                            data: noCounts,
-                            backgroundColor: 'rgba(255, 99, 132, 0.6)',
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                precision:0
-                            }
-                        }
-                    }
-                }
-            });
-        }
-
-        downloadReport.addEventListener('click', async function () {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-            const margin = 15;
-            const pageHeight = doc.internal.pageSize.height;
-            const pageWidth = doc.internal.pageSize.width;
-            let y = margin + 10;
-            const lineHeight = 8;
-
-            // Draw border rectangle
-            doc.setDrawColor(117, 75, 162); // purple border color
-            doc.setLineWidth(1.5);
-            doc.rect(margin / 2, margin / 2, pageWidth - margin, pageHeight - margin);
-
-            // Add multiple small watermark texts diagonally tiled
-            doc.setTextColor(200, 200, 200);
-            doc.setFontSize(10);
-            doc.setFont("helvetica", "italic");
-            const watermarkText = "Career Spark";
-            const stepX = 80;
-            const stepY = 60;
-            for (let x = 0; x < pageWidth; x += stepX) {
-                for (let yPos = 0; yPos < pageHeight; yPos += stepY) {
-                    doc.text(watermarkText, x, yPos, { angle: 45, opacity: 0.05 });
-                }
-            }
-            doc.setTextColor(0, 0, 0);
-            doc.setFont("Courier", "normal");
-            doc.setFontSize(14);
-
-            doc.text(`Personality Report for ${currentUser.name}`, margin, y);
-            y += lineHeight * 2;
-
-            responses.forEach((response, index) => {
-                const questionText = `Q${index + 1}: ${response.question}`;
-                const answerText = `Answer: ${response.answer}`;
-                const reasonText = `Reason: ${response.reason}`;
-
-                const splitQuestion = doc.splitTextToSize(questionText, pageWidth - 2 * margin);
-                const splitAnswer = doc.splitTextToSize(answerText, pageWidth - 2 * margin);
-                const splitReason = doc.splitTextToSize(reasonText, pageWidth - 2 * margin);
-
-                if (y + (splitQuestion.length + splitAnswer.length + splitReason.length) * lineHeight > pageHeight - margin) {
-                    doc.addPage();
-                    // Draw border on new page
-                    doc.setDrawColor(117, 75, 162);
-                    doc.setLineWidth(1.5);
-                    doc.rect(margin / 2, margin / 2, pageWidth - margin, pageHeight - margin);
-                    // Add tiled watermark on new page
-                    doc.setTextColor(200, 200, 200);
-                    doc.setFontSize(20);
-                    doc.setFont("helvetica", "bold");
-                    for (let x = 0; x < pageWidth; x += stepX) {
-                        for (let yPos = 0; yPos < pageHeight; yPos += stepY) {
-                            doc.text(watermarkText, x, yPos, { angle: 45, opacity: 0.05 });
-                        }
-                    }
-                    doc.setTextColor(0, 0, 0);
-                    doc.setFont("Courier", "normal");
-                    y = margin + 10;
-                }
-
-                doc.text(splitQuestion, margin, y);
-                y += lineHeight * splitQuestion.length;
-                doc.text(splitAnswer, margin, y);
-                y += lineHeight * splitAnswer.length;
-                doc.text(splitReason, margin, y);
-                y += lineHeight * splitReason.length + lineHeight;
-            });
-
-            const remarks = generatePersonalityRemarks(responses);
-            const prominentCategory = getProminentCategory();
-            const remarksTitle = "--- Personality Remarks:";
-            const splitRemarksTitle = doc.splitTextToSize(remarksTitle, pageWidth - 2 * margin);
-            const splitRemarks = doc.splitTextToSize(remarks, pageWidth - 2 * margin);
-            const categoryTitle = `Most Prominent Category: ${prominentCategory}`;
-            const splitCategoryTitle = doc.splitTextToSize(categoryTitle, pageWidth - 2 * margin);
-
-            // Use smaller font size for remarks to fit better
-            const remarksFontSize = 12;
-            const remarksLineHeight = 7;
-
-            if (y + (splitRemarksTitle.length * remarksLineHeight + splitRemarks.length * remarksLineHeight + splitCategoryTitle.length * remarksLineHeight) + 90 > pageHeight - margin) {
-                doc.addPage();
-                // Draw border on new page
-                doc.setDrawColor(117, 75, 162);
-                doc.setLineWidth(1.5);
-                doc.rect(margin / 2, margin / 2, pageWidth - margin, pageHeight - margin);
-                // Add tiled watermark on new page
-                doc.setTextColor(200, 200, 200);
-                doc.setFontSize(14);
-                doc.setFont("Courier", "normal");
-                for (let x = 0; x < pageWidth; x += stepX) {
-                    for (let yPos = 0; yPos < pageHeight; yPos += stepY) {
-                        doc.text(watermarkText, x, yPos, { angle: 45, opacity: 0.05 });
-                    }
-                }
-                doc.setTextColor(0, 0, 0);
-                doc.setFont("Courier", "normal");
-                y = margin + 10;
-            }
-
-            doc.setFontSize(remarksFontSize);
-            doc.text(splitRemarksTitle, margin, y);
-            y += remarksLineHeight * splitRemarksTitle.length;
-            doc.text(splitRemarks, margin, y);
-            y += remarksLineHeight * splitRemarks.length;
-            doc.text(splitCategoryTitle, margin, y);
-            y += remarksLineHeight * splitCategoryTitle.length;
-
-            // Reset font size for footer and image
-            doc.setFontSize(10);
-
-            // Add footer
-            doc.text('Generated by Career Spark', margin, pageHeight - margin + 2);
-
-            // Add chart image below text
-            try {
-                const canvas = document.getElementById('responseChart');
-                if (!canvas) throw new Error('Chart canvas not found');
-
-                // Create a new canvas to scale up the chart for better resolution
-                const scaleFactor = 3;
-                const scaledCanvas = document.createElement('canvas');
-                scaledCanvas.width = canvas.width * scaleFactor;
-                scaledCanvas.height = canvas.height * scaleFactor;
-                const scaledCtx = scaledCanvas.getContext('2d');
-                scaledCtx.scale(scaleFactor, scaleFactor);
-                scaledCtx.drawImage(canvas, 0, 0);
-
-                const imgData = scaledCanvas.toDataURL('image/png');
-
-                // Calculate image width and height to fit page width with margin
-                const imgProps = doc.getImageProperties(imgData);
-                const pdfWidth = pageWidth - 2 * margin;
-                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-
-                // Add new page if not enough space
-                if (y + pdfHeight + 20 > pageHeight) {
-                    doc.addPage();
-                    // Draw border on new page
-                    doc.setDrawColor(117, 75, 162);
-                    doc.setLineWidth(1.5);
-                    doc.rect(margin / 2, margin / 2, pageWidth - margin, pageHeight - margin);
-                    // Add tiled watermark on new page
-                    doc.setTextColor(200, 200, 200);
-                    doc.setFontSize(14);
-                    doc.setFont("Courier", "bold");
-                    for (let x = 0; x < pageWidth; x += stepX) {
-                        for (let yPos = 0; yPos < pageHeight; yPos += stepY) {
-                            doc.text(watermarkText, x, yPos, { angle: 45, opacity: 0.05 });
-                        }
-                    }
-                    doc.setTextColor(0, 0, 0);
-                    y = margin + 10;
-                } else {
-                    y += 10;
-                }
-                doc.addImage(imgData, 'PNG', margin, y, pdfWidth, pdfHeight);
-            } catch (error) {
-                console.error('Error adding chart image to PDF:', error);
-            }
-
-            doc.save('personality_report.pdf');
-        });
-
-        viewGraphButton.addEventListener('click', () => {
-            mainContainer.classList.add('hidden');
-            graphPage.classList.remove('hidden');
-            drawGraph();
-        });
-
-        backToReport.addEventListener('click', () => {
-            graphPage.classList.add('hidden');
-            mainContainer.classList.remove('hidden');
-        });
+    backToReport.addEventListener("click", () => {
+      graphPage.classList.add("hidden");
+      mainContainer.classList.remove("hidden");
+    });
   </script>
  </body>
 </html>
